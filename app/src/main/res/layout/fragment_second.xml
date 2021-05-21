@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondFragment">
+
+
+    <TextView
+        android:id="@+id/input"
+        android:layout_gravity="top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:padding="16dp"
+        android:transitionName="input_two"
+        android:text="search"
+        android:background="@drawable/rounded_bg"
+        />
+
+
+    <ImageView
+        android:id="@+id/imgae"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="top|center"
+        android:layout_marginTop="90dp"
+        android:transitionName="image"
+        android:src="@drawable/ff"
+        />
+
+
+</FrameLayout>
