@@ -1,5 +1,6 @@
 package com.hypermedialabs.sharedelementanimation
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,13 +22,21 @@ class FirstFragment : Fragment() {
         // Inflate the layout for this fragment
         binding= FragmentFirstBinding.inflate(inflater,container,false)
         binding.input.setOnClickListener {
-            val extras = FragmentNavigatorExtras(binding.input to "input_two",binding.imgae to "image")
-            findNavController().navigate(
-                R.id.action_firstFragment_to_secondFragment,
-                null,
-                null,
-                extras
-            )
+            // Check if we're running on Android 5.0 or higher
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                val extras = FragmentNavigatorExtras(binding.input to "input_two",binding.imgae to "image")
+                findNavController().navigate(
+                    R.id.action_firstFragment_to_secondFragment,
+                    null,
+                    null,
+                    extras
+                )
+            } else {
+                findNavController().navigate(
+                    R.id.action_firstFragment_to_secondFragment
+                )
+            }
+
         }
         return binding.root
     }
